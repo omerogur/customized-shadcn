@@ -342,6 +342,12 @@ export function ConfirmButton({ children, ...props }) {
                 </svg>
                 Yükleniyor...
               </Button>
+              <pre className="mt-4 bg-muted p-3 rounded text-xs overflow-x-auto">{`<Button disabled className="w-full">
+  <svg className="animate-spin -ml-1 mr-2 h-4 w-4">
+    {/* loading spinner SVG */}
+  </svg>
+  Yükleniyor...
+</Button>`}</pre>
             </div>
 
             {/* Icon Buttons */}
@@ -364,6 +370,15 @@ export function ConfirmButton({ children, ...props }) {
                   </svg>
                 </Button>
               </div>
+              <pre className="mt-4 bg-muted p-3 rounded text-xs overflow-x-auto">{`<Button size="icon">
+  <svg>...</svg>
+</Button>
+<Button variant="outline" size="icon">
+  <svg>...</svg>
+</Button>
+<Button variant="ghost" size="icon">
+  <svg>...</svg>
+</Button>`}</pre>
             </div>
 
             {/* Button Group */}
@@ -374,16 +389,44 @@ export function ConfirmButton({ children, ...props }) {
                 <Button variant="outline" className="rounded-none border-l-0">İkinci</Button>
                 <Button variant="outline" className="rounded-l-none border-l-0">Üçüncü</Button>
               </div>
+              <pre className="mt-4 bg-muted p-3 rounded text-xs overflow-x-auto">{`<div className="flex">
+  <Button variant="outline" className="rounded-r-none">
+    Birinci
+  </Button>
+  <Button variant="outline" className="rounded-none border-l-0">
+    İkinci
+  </Button>
+  <Button variant="outline" className="rounded-l-none border-l-0">
+    Üçüncü
+  </Button>
+</div>`}</pre>
             </div>
 
             {/* asChild Örneği */}
             <div className="bg-card border rounded-lg p-6">
               <h3 className="font-medium mb-3">asChild ile Link</h3>
+              <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-sm text-blue-800 dark:text-blue-200">
+                  <strong>💡 asChild Neden Önemli?</strong><br/>
+                  • asChild olmadan: <code>&lt;button&gt;&lt;a&gt;&lt;/a&gt;&lt;/button&gt;</code> (hatalı HTML)<br/>
+                  • asChild ile: <code>&lt;a&gt;&lt;/a&gt;</code> (doğru HTML + accessibility)
+                </p>
+              </div>
               <Button asChild variant="outline">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                   GitHub'a Git →
                 </a>
               </Button>
+              <pre className="mt-4 bg-muted p-3 rounded text-xs overflow-x-auto">{`<Button asChild variant="outline">
+  <a href="https://github.com" target="_blank">
+    GitHub'a Git →
+  </a>
+</Button>
+
+// Next.js ile:
+<Button asChild>
+  <Link href="/about">About</Link>
+</Button>`}</pre>
             </div>
           </div>
         </section>
