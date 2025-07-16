@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { ThemeSwitcher, AdvancedThemeSwitcher } from "@/components/theme-switcher";
 import Link from "next/link";
 
@@ -58,23 +59,23 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Input Kartı - Yakında */}
-            <div className="bg-card border rounded-lg p-6 opacity-60">
+            {/* Input Kartı */}
+            <div className="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold">Input</h3>
-                <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Yakında</span>
+                <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Tamamlandı</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 Metin giriş alanları. Validation, placeholder, farklı türler.
               </p>
               <div className="flex gap-2 mb-4">
-                <div className="h-8 bg-muted rounded w-20"></div>
-                <div className="h-8 bg-muted rounded w-16"></div>
+                <Input placeholder="Text input" className="text-sm" />
+                <Input type="email" placeholder="Email" className="text-sm" />
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-xs text-muted-foreground">Types • Validation • Form</span>
-                <Button disabled variant="ghost" size="sm">
-                  Yakında
+                <span className="text-xs text-muted-foreground">Types • Validation • forwardRef</span>
+                <Button asChild variant="ghost" size="sm">
+                  <Link href="/input">Detaylar →</Link>
                 </Button>
               </div>
             </div>
